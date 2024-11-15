@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { green, indigo } from "tailwindcss/colors";
 
 export default {
   content: [
@@ -11,6 +12,14 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        green: {
+          ...green,
+          350: "#28d3a0",
+        },
+        indigo: {
+         ...indigo,
+          650: "#4814b0",
+        },
       },
     },
   },

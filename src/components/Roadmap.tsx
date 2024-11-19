@@ -4,18 +4,23 @@ import { ReactFlow, Background, Controls } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { motion } from 'framer-motion';
 import { roadmapNodes, roadmapEdges } from '@/data/constants/roadmapFrontend.constant';
+import { Merriweather, Open_Sans } from "next/font/google"
 
+const merriwwather = Merriweather({ subsets: ['latin'], weight: '700' });
+const openSans = Open_Sans({ subsets: ['latin'] });
 
 export default function RoadmapFlow() {
   const nodes = roadmapNodes.map((node) => ({
     ...node,
+    style: {
+      width: `${Math.min(400, Math.max(150, node.data.title.length * 15))}px`,
+    },
     data: {
       ...node.data,
       label: (
         <motion.div
-          className={`p-2 rounded-md shadow-md ${
-            node.type === 'block' ? 'bg-indigo-650 text-white font-bold' : 'bg-green-350 text-gray-800 font-medium'
-          }`}
+          className={`px-3 py-4 rounded-md shadow-md text-2xl ${node.type === 'block' ? 'bg-indigo-650 text-white font-bold '+ merriwwather.className : 'bg-green-350 text-gray-800 font-semibold ' + openSans.className
+            }`}
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5 }}
@@ -34,10 +39,10 @@ export default function RoadmapFlow() {
       strokeWidth: 3,
     },
   }));
-  
+
 
   return (
-    <div className="h-screen bg-gray-50 p-4">
+    <div className={"h-screen bg-gray-50 p-4" + merriwwather.className} >
       <h1 className="text-2xl font-bold text-indigo-650 mb-4 text-center">
         Front-end Development Roadmap
       </h1>

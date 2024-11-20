@@ -35,8 +35,8 @@ export default function RoadmapFlow() {
     ...edge,
     animated: true,
     style: {
-      stroke: edge.type === 'subtopic' ? '#4814b0' : '#28d3a0',
-      strokeWidth: 3,
+      stroke: edge.data?.isMainPath ? '#4814b0' : '#28d3a0',
+      strokeWidth: edge.data?.isMainPath ? 4 : 3,
     },
   }));
 

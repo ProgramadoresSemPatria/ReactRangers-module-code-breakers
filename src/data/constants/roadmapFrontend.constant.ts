@@ -3,20 +3,47 @@ const roadmapNodes = [
     id: "1",
     type: "main",
     position: { x: 0, y: 200 },
-    data: { title: "Programming and Web Fundamentals" },
+    data: { 
+      title: "Programming and Web Fundamentals",
+      description: "Learn the basics of programming and web development."
+    },
   },
   {
     id: "1-1",
     type: "subtopic",
     position: { x: -100, y: 400 },
-    data: { title: "Programming Basics" },
+    data: { 
+      title: "Programming Basics", 
+      description: "Learn the basics of programming.", 
+      resources: [
+        {
+          title: "Scratch",
+          url: "https://scratch.mit.edu/",  
+        },
+        {
+          title: "Code.org",
+          url: "https://code.org/",
+        },
+      ] },
     parentNode: "1",
   },
   {
     id: "1-2",
     type: "subtopic",
     position: { x: 300, y: 400 },
-    data: { title: "Web Concepts" },
+    data: { 
+      title: "Web Concepts",
+      description: "Learn the basics of web development.",
+      resources: [
+        {
+          title: "Mozilla Developer Network",
+          url: "https://developer.mozilla.org/",
+        },
+        {
+          title: "W3Schools",
+          url: "https://www.w3schools.com/",
+        },
+      ] },
     parentNode: "1",
   },
 

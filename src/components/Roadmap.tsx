@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { ReactFlow, Background, Controls } from '@xyflow/react';
+import { ReactFlow, Background, Controls, Node } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { motion } from 'framer-motion';
 import { roadmapNodes, roadmapEdges } from '@/data/constants/roadmapFrontend.constant';
@@ -40,6 +40,9 @@ export default function RoadmapFlow() {
     },
   }));
 
+  const onNodeClick = (event: React.MouseEvent, node: Node) => {
+    console.log('Clicked node:', node);
+  };
 
   return (
     <div className={"h-screen bg-gray-50 p-4" + merriwwather.className} >
@@ -47,7 +50,7 @@ export default function RoadmapFlow() {
         Front-end Development Roadmap
       </h1>
       <div className="h-[90%] w-full shadow-md rounded-lg overflow-hidden bg-white">
-        <ReactFlow nodes={nodes} edges={edges} fitView>
+        <ReactFlow nodes={nodes} edges={edges} fitView onNodeClick={onNodeClick}>
           <Background color="#ddd" gap={16} />
           <Controls />
         </ReactFlow>

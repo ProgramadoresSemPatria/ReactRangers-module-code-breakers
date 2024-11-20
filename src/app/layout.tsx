@@ -59,7 +59,7 @@ export default function RootLayout({
         <meta charSet="UTF-8" />
         <meta
           name="author"
-          content="Luan Alves de Paiva & "
+          content="Luan Alves de Paiva & Arthur Duarte"
         />
         <link rel="icon" href="/favicon.ico" />
       </head>

@@ -12,7 +12,17 @@ import {
 
 const merriweather = Merriweather({ subsets: ['latin'], weight: '700' });
 
-export default function MainTopicNode({ data }: { data: { title: string, description: string, resources?: { title: string, url: string }[] } }) {
+export default function MainTopicNode({ data }: { data: { 
+  title: string, 
+  description?: string, 
+  subtopics?: Array<{
+    id: string,
+    title: string,
+    description?: string,
+    resources?: Array<{ title: string, url: string }>
+  }>,
+  resources?: Array<{ title: string, url: string }> 
+}}) {
   return (
     <>
     <Sheet>
@@ -33,23 +43,65 @@ export default function MainTopicNode({ data }: { data: { title: string, descrip
       <SheetContent>
         <SheetHeader>
           <SheetTitle>{data.title}</SheetTitle>
-          <SheetDescription>
-            {data.description}
-          </SheetDescription>
+          {data.description && (
+            <SheetDescription>
+              {data.description}
+            </SheetDescription>
+          )}
         </SheetHeader>
+        
+        {/* Main topic resources */}
         {data.resources && data.resources.length > 0 && (
-          <div className="flex flex-col gap-2 mt-6">
-            {data.resources.map((resource) => (
-              <a 
-                href={resource.url} 
-                key={resource.title} 
-                className="text-indigo-650 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {resource.title}
-              </a>
-            ))}
+          <div className="mt-4">
+            <h3 className="text-lg font-semibold mb-2">Resources</h3>
+            <div className="flex flex-col gap-2">
+              {data.resources.map((resource) => (
+                <a 
+                  href={resource.url} 
+                  key={resource.title} 
+                  className="text-indigo-650 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {resource.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {/* Subtopics section */}
+        {data.subtopics && data.subtopics.length > 0 && (
+          <div className="mt-6">
+            <h3 className="text-lg font-semibold mb-3">Subtopics</h3>
+            <div className="space-y-4">
+              {data.subtopics.map((subtopic) => (
+                <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
+                  <h4 className="font-semibold text-indigo-650">{subtopic.title}</h4>
+                  {subtopic.description && (
+                    <p className="text-sm text-gray-600 mt-1">{subtopic.description}</p>
+                  )}
+                  {subtopic.resources && subtopic.resources.length > 0 && (
+                    <div className="mt-2">
+                      <p className="text-sm font-medium">Resources:</p>
+                      <div className="flex flex-col gap-1 mt-1">
+                        {subtopic.resources.map((resource) => (
+                          <a 
+                            href={resource.url} 
+                            key={resource.title} 
+                            className="text-sm text-indigo-650 hover:underline"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            {resource.title}
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </SheetContent>

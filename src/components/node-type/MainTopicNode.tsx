@@ -40,7 +40,7 @@ export default function MainTopicNode({ data }: { data: {
           <Handle type="source" position={Position.Bottom} />
         </div>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className='lg:min-w-[800px]'>
         <SheetHeader>
           <SheetTitle>{data.title}</SheetTitle>
           {data.description && (
@@ -50,26 +50,6 @@ export default function MainTopicNode({ data }: { data: {
           )}
         </SheetHeader>
         
-        {/* Main topic resources */}
-        {data.resources && data.resources.length > 0 && (
-          <div className="mt-4">
-            <h3 className="text-lg font-semibold mb-2">Resources</h3>
-            <div className="flex flex-col gap-2">
-              {data.resources.map((resource) => (
-                <a 
-                  href={resource.url} 
-                  key={resource.title} 
-                  className="text-indigo-650 hover:underline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {resource.title}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-
         {/* Subtopics section */}
         {data.subtopics && data.subtopics.length > 0 && (
           <div className="mt-6">
@@ -77,28 +57,39 @@ export default function MainTopicNode({ data }: { data: {
             <div className="space-y-4">
               {data.subtopics.map((subtopic) => (
                 <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-semibold text-indigo-650">{subtopic.title}</h4>
-                  {subtopic.description && (
-                    <p className="text-sm text-gray-600 mt-1">{subtopic.description}</p>
-                  )}
-                  {subtopic.resources && subtopic.resources.length > 0 && (
-                    <div className="mt-2">
-                      <p className="text-sm font-medium">Resources:</p>
-                      <div className="flex flex-col gap-1 mt-1">
-                        {subtopic.resources.map((resource) => (
-                          <a 
+                  <Sheet>
+                    <SheetTrigger asChild>
+                      <h4 className="cursor-pointer font-semibold text-indigo-650">{subtopic.title}</h4>
+                    </SheetTrigger>
+                    <SheetContent>
+                      <SheetHeader>
+                        <SheetTitle>{subtopic.title}</SheetTitle>
+                        {subtopic.description && (
+                          <SheetDescription>
+                            {subtopic.description}
+                          </SheetDescription>
+                        )}
+                      </SheetHeader>
+                    {subtopic.resources && subtopic.resources.length > 0 && (
+                      <div className="mt-2">
+                        <p className="text-sm font-medium">Resources:</p>
+                        <div className="flex flex-col gap-1 mt-1">
+                          {subtopic.resources.map((resource) => (
+                            <a 
                             href={resource.url} 
                             key={resource.title} 
                             className="text-sm text-indigo-650 hover:underline"
                             target="_blank"
                             rel="noopener noreferrer"
-                          >
-                            {resource.title}
-                          </a>
-                        ))}
+                            >
+                              {resource.title}
+                            </a>
+                          ))}
+                        </div>
                       </div>
-                    </div>
-                  )}
+                      )}
+                    </SheetContent> 
+                  </Sheet>
                 </div>
               ))}
             </div>

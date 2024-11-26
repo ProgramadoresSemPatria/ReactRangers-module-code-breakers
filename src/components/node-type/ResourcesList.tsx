@@ -7,7 +7,7 @@ interface ResourcesListProps {
     }[];
 }
 
-export default function ResourcesList({ resources }: ResourcesListProps) {
+export default function ResourcesList({ resources }: Readonly<ResourcesListProps>) {
     if (!resources || resources.length === 0) return null;
 
   return (

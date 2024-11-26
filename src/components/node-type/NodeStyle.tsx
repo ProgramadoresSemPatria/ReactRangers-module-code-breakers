@@ -6,7 +6,7 @@ interface NodeStyleProps {
     title: string;
 }
 
-export default function NodeStyle({ title }: NodeStyleProps) {
+export default function NodeStyle({ title }: Readonly<NodeStyleProps>) {
   return (
     <>
       <Handle type="target" position={Position.Top} />

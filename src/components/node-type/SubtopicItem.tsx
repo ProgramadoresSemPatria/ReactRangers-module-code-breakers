@@ -1,13 +1,13 @@
 import React from 'react'
 import { Sheet, SheetTrigger, SheetTitle, SheetDescription, SheetContent, SheetHeader } from '../ui/sheet'
 import ResourcesList from './ResourcesList'
-import { Subtopic } from './types'
+import { Subtopic } from '@/data/interface'
 
 interface SubtopicItemProps {
     subtopic: Subtopic;
 }
 
-export default function SubtopicItem({ subtopic }: SubtopicItemProps) {
+export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) {
   return (
     <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
         <Sheet>

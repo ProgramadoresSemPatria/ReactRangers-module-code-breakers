@@ -1,4 +1,6 @@
-const roadmapNodes = [
+import { RoadmapNodes } from "../interface";
+
+const roadmapNodes: RoadmapNodes[] = [
   {
     id: "1",
     type: "main",

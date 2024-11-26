@@ -9,14 +9,19 @@ import {
 import NodeStyle from './NodeStyle';
 import SubtopicItem from "./SubtopicItem";
 import { MainTopicNodeProps } from "@/data/interface";
+import useProgress from "@/data/hooks/useProgress";
+import { Progress } from "../ui/progress";
 
 
 export default function MainTopicNode({ data }: Readonly<MainTopicNodeProps>) {
+  const { progress } = useProgress();
+  const topicProgress = progress[data.title] ?? 0;
   return (
     <Sheet>
       <SheetTrigger asChild>
         <div>
-          <NodeStyle title={data.title} />      
+          <NodeStyle title={data.title} />
+          <Progress value={topicProgress} />      
         </div>
     </SheetTrigger>
       <SheetContent className='lg:min-w-[800px]'>

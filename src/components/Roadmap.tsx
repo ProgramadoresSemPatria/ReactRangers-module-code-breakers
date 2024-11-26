@@ -4,8 +4,7 @@ import { ReactFlow, Background, Controls, Node } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { roadmapNodes, roadmapEdges } from '@/data/constants/roadmapFrontend.constant';
 import { Merriweather } from "next/font/google";
-import MainTopicNode from './node-type/MainTopicNode';
-import TopicNode from './node-type/TopicNode';
+import MainTopicNode from './node-type/MainNode';
 import MainEdge from './edge-type/MainEdge';
 import TopicEdge from './edge-type/TopicEdge';
 
@@ -14,7 +13,6 @@ const merriweather = Merriweather({ subsets: ['latin'], weight: '700' });
 // Define node types
 const nodeTypes = {
   main: MainTopicNode,
-  subtopic: TopicNode,
 };
 
 // Define edge types

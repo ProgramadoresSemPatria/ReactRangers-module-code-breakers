@@ -10,6 +10,15 @@ export interface Subtopic {
   resources?: Resource[];
 }
 
+export interface MainTopicNodeProps {
+  data: {
+    title: string;
+    description?: string;
+    subtopics?: Subtopic[];
+    resources?: Resource[];
+  };
+}
+
 export interface Data extends Record<string, unknown> {
     title: string;
     description?: string;

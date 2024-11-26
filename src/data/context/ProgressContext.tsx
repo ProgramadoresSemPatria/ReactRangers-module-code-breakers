@@ -2,7 +2,7 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from "react";
 import { ProgressContextType } from "../interface";
 
-const ProgressContext = createContext<ProgressContextType | undefined>(undefined)
+const ProgressContext = createContext<ProgressContextType>({} as ProgressContextType)
 interface ProgressProviderProps {
     children: React.ReactNode;
 }

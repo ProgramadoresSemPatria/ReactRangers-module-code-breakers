@@ -4,255 +4,353 @@ const roadmapNodes = [
     type: "main",
     position: { x: 0, y: 200 },
     data: { 
-      title: "Programming and Web Fundamentals",
-      description: "Learn the basics of programming and web development."
+      title: "Internet",
+      description: "The Internet is a global network of interconnected computer networks that use the Internet Protocol Suite (TCP/IP) to communicate. It enables the exchange of data, information, and services across the world, connecting billions of devices and users. The Internet has revolutionized communication, commerce, education, and entertainment, becoming an integral part of modern society. It supports various applications and services, from web browsing and instant messaging to streaming media and online gaming. While offering unprecedented access to information and connectivity, the Internet also raises concerns about privacy, security, and digital divide issues. Visit the following resources to learn more:",
+      subtopics: [
+        { 
+          id: "1-1",
+          title: "How Does the Internet Work?", 
+          description: "The Internet works through a global network of interconnected computers and servers, communicating via standardized protocols. Data is broken into packets and routed through various network nodes using the Internet Protocol (IP). These packets travel across different physical infrastructures, including fiber optic cables, satellites, and wireless networks. The Transmission Control Protocol (TCP) ensures reliable delivery and reassembly of packets at their destination. Domain Name System (DNS) servers translate human-readable website names into IP addresses. When you access a website, your device sends a request to the appropriate server, which responds with the requested data. This process, facilitated by routers, switches, and other networking equipment, enables the seamless exchange of information across vast distances, forming the backbone of our digital communications.",
+          resources: [
+            {
+              title: "How Does The Internet Work? - CS FYI",
+              url: "https://cs.fyi/guide/how-does-internet-work",
+            },
+            {
+              title: "How Does The Internet Work? - MDN",
+              url: "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/How_does_the_Internet_work",
+            },
+            {
+              title: "How The Internet Works in 5 Minutes",
+              url: "https://www.youtube.com/watch?v=7_LPdttKXPc&ab_channel=Aaron",
+            }
+          ]
+        },
+        { 
+          id: "1-2",
+          title: "Web Concepts",
+          description: "Understand how the web works, including HTTP, browsers, servers, and basic networking concepts.",
+          resources: [
+            {
+              title: "MDN - How the Web works",
+              url: "https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/How_the_Web_works",
+            },
+            {
+              title: "Web.dev - How the Web Works",
+              url: "https://web.dev/learn/",
+            },
+            {
+              title: "Harvard's CS50 - Web Programming",
+              url: "https://cs50.harvard.edu/web/2020/",
+            }
+          ]
+        },
+        {
+          id: "1-3",
+          title: "Development Tools",
+          description: "Learn to use essential development tools like code editors, browser dev tools, and terminal basics.",
+          resources: [
+            {
+              title: "VS Code Tutorial",
+              url: "https://code.visualstudio.com/docs/introvideos/basics",
+            },
+            {
+              title: "Chrome DevTools",
+              url: "https://developer.chrome.com/docs/devtools/",
+            },
+            {
+              title: "Command Line Crash Course",
+              url: "https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line",
+            }
+          ]
+        },
+        {
+          id: "1-4",
+          title: "Internet & Web Security Basics",
+          description: "Understand fundamental web security concepts, HTTPS, and basic data protection.",
+          resources: [
+            {
+              title: "Web Security on MDN",
+              url: "https://developer.mozilla.org/en-US/docs/Web/Security",
+            },
+            {
+              title: "OWASP Web Security Testing Guide",
+              url: "https://owasp.org/www-project-web-security-testing-guide/",
+            },
+            {
+              title: "Google Web Fundamentals - Security",
+              url: "https://developers.google.com/web/fundamentals/security/",
+            }
+          ]
+        }
+      ]
     },
   },
-  {
-    id: "1-1",
-    type: "subtopic",
-    position: { x: -100, y: 400 },
-    data: { 
-      title: "Programming Basics", 
-      description: "Learn the basics of programming.", 
-      resources: [
-        {
-          title: "Scratch",
-          url: "https://scratch.mit.edu/",  
-        },
-        {
-          title: "Code.org",
-          url: "https://code.org/",
-        },
-      ] },
-    parentNode: "1",
-  },
-  {
-    id: "1-2",
-    type: "subtopic",
-    position: { x: 300, y: 400 },
-    data: { 
-      title: "Web Concepts",
-      description: "Learn the basics of web development.",
-      resources: [
-        {
-          title: "Mozilla Developer Network",
-          url: "https://developer.mozilla.org/",
-        },
-        {
-          title: "W3Schools",
-          url: "https://www.w3schools.com/",
-        },
-      ] },
-    parentNode: "1",
-  },
-
   {
     id: "2",
     type: "main",
     position: { x: 100, y: 700 },
-    data: { title: "Essential Front-End Technologies" },
+    data: { 
+      title: "Essential Front-End Technologies",
+      description: "Master the core technologies that power the modern web.",
+      subtopics: [
+        { 
+          id: "2-1", 
+          title: "HTML",
+          description: "Learn modern HTML5, semantic markup, and best practices for structuring web content.",
+          resources: [
+            {
+              title: "MDN - HTML5 Guide",
+              url: "https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5",
+            },
+            {
+              title: "HTML Best Practices",
+              url: "https://www.w3schools.com/html/html5_syntax.asp",
+            },
+            {
+              title: "Semantic HTML Guide",
+              url: "https://www.semrush.com/blog/semantic-html5-guide/",
+            }
+          ]
+        },
+        { 
+          id: "2-2", 
+          title: "CSS",
+          description: "Master CSS3, layouts, responsive design, and modern styling techniques.",
+          resources: [
+            {
+              title: "MDN - CSS Learning Area",
+              url: "https://developer.mozilla.org/en-US/docs/Learn/CSS",
+            },
+            {
+              title: "CSS Tricks",
+              url: "https://css-tricks.com/",
+            },
+            {
+              title: "Learn CSS Grid",
+              url: "https://learncssgrid.com/",
+            },
+            {
+              title: "Flexbox Froggy",
+              url: "https://flexboxfroggy.com/",
+            }
+          ]
+        },
+        { 
+          id: "2-3", 
+          title: "JavaScript",
+          description: "Learn modern JavaScript (ES6+), DOM manipulation, and asynchronous programming.",
+          resources: [
+            {
+              title: "JavaScript.info",
+              url: "https://javascript.info/",
+            },
+            {
+              title: "Eloquent JavaScript",
+              url: "https://eloquentjavascript.net/",
+            },
+            {
+              title: "MDN - Modern JavaScript",
+              url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+            },
+            {
+              title: "You Don't Know JS",
+              url: "https://github.com/getify/You-Dont-Know-JS",
+            }
+          ]
+        },
+        {
+          id: "2-4",
+          title: "Browser APIs",
+          description: "Understand and work with essential browser APIs like DOM, Fetch, Storage, and more.",
+          resources: [
+            {
+              title: "MDN - Web APIs",
+              url: "https://developer.mozilla.org/en-US/docs/Web/API",
+            },
+            {
+              title: "Web Storage API Guide",
+              url: "https://developer.mozilla.org/en-US/docs/Web/API/Web_Storage_API",
+            },
+            {
+              title: "Fetch API Tutorial",
+              url: "https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch",
+            }
+          ]
+        }
+      ]
+    },
   },
-  {
-    id: "2-1",
-    type: "subtopic",
-    position: { x: 0, y: 900 },
-    data: { title: "HTML" },
-    parentNode: "2",
-  },
-  {
-    id: "2-2",
-    type: "subtopic",
-    position: { x: 200, y: 900 },
-    data: { title: "CSS" },
-    parentNode: "2",
-  },
-  {
-    id: "2-3",
-    type: "subtopic",
-    position: { x: 400, y: 900 },
-    data: { title: "JavaScript " },
-    parentNode: "2",
-  },
-
   {
     id: "3",
     type: "main",
     position: { x: 200, y: 1200 },
-    data: { title: "Professional Development and Code Organization" },
+    data: { 
+      title: "Professional Development and Code Organization",
+      description: "Learn professional development practices and code organization techniques.",
+      subtopics: [
+        { 
+          id: "3-1", 
+          title: "Git and GitHub",
+          description: "Master version control with Git and collaboration through GitHub.",
+          resources: [
+            {
+              title: "Git Handbook",
+              url: "https://guides.github.com/introduction/git-handbook/",
+            },
+            {
+              title: "Learn Git Branching",
+              url: "https://learngitbranching.js.org/",
+            },
+            {
+              title: "GitHub Learning Lab",
+              url: "https://lab.github.com/",
+            },
+            {
+              title: "Pro Git Book",
+              url: "https://git-scm.com/book/en/v2",
+            }
+          ]
+        },
+        { 
+          id: "3-2", 
+          title: "Code Organization",
+          description: "Learn best practices for organizing code, design patterns, and project structure.",
+          resources: [
+            {
+              title: "Clean Code JavaScript",
+              url: "https://github.com/ryanmcdermott/clean-code-javascript",
+            },
+            {
+              title: "JavaScript Design Patterns",
+              url: "https://addyosmani.com/resources/essentialjsdesignpatterns/book/",
+            },
+            {
+              title: "SOLID Principles in JavaScript",
+              url: "https://medium.com/@cramirez92/s-o-l-i-d-the-first-5-principles-of-object-oriented-design-with-javascript-790f6ac9b9fa",
+            }
+          ]
+        },
+        {
+          id: "3-3",
+          title: "Code Quality Tools",
+          description: "Use linters, formatters, and other tools to maintain code quality.",
+          resources: [
+            {
+              title: "ESLint Documentation",
+              url: "https://eslint.org/docs/user-guide/getting-started",
+            },
+            {
+              title: "Prettier Documentation",
+              url: "https://prettier.io/docs/en/",
+            },
+            {
+              title: "TypeScript Handbook",
+              url: "https://www.typescriptlang.org/docs/handbook/intro.html",
+            }
+          ]
+        },
+        {
+          id: "3-4",
+          title: "Testing Fundamentals",
+          description: "Learn the basics of testing, including unit tests and testing frameworks.",
+          resources: [
+            {
+              title: "Jest Testing Framework",
+              url: "https://jestjs.io/docs/getting-started",
+            },
+            {
+              title: "Testing JavaScript with Kent C. Dodds",
+              url: "https://testingjavascript.com/",
+            },
+            {
+              title: "React Testing Library",
+              url: "https://testing-library.com/docs/react-testing-library/intro/",
+            }
+          ]
+        }
+      ]
+    },
   },
-  {
-    id: "3-1",
-    type: "subtopic",
-    position: { x: 50, y: 1400 },
-    data: { title: "Git and GitHub" },
-    parentNode: "3",
-  },
-  {
-    id: "3-2",
-    type: "subtopic",
-    position: { x: 350, y: 1400 },
-    data: { title: "Code Organization" },
-    parentNode: "3",
-  },
-
   {
     id: "4",
     type: "main",
     position: { x: 600, y: 200 },
-    data: { title: "Advanced JavaScript Development" },
+    data: { 
+      title: "Advanced JavaScript Development",
+      subtopics: [
+        { id: "4-1", title: "Advanced DOM Manipulation" },
+        { id: "4-2", title: "Working with APIs" },
+        { id: "4-3", title: "Promises and Async/Await" },
+        { id: "4-4", title: "TypeScript" }
+      ]
+    },
   },
-  {
-    id: "4-1",
-    type: "subtopic",
-    position: { x: 1100, y: 200 },
-    data: { title: "Advanced DOM Manipulation" },
-    parentNode: "4",
-  },
-  {
-    id: "4-2",
-    type: "subtopic",
-    position: { x: 900, y: 400 },
-    data: { title: "Working with APIs" },
-    parentNode: "4",
-  },
-  {
-    id: "4-3",
-    type: "subtopic",
-    position: { x: 1100, y: 600 },
-    data: { title: "Promises and Async/Await" },
-    parentNode: "4",
-  },
-  {
-    id: "4-4",
-    type: "subtopic",
-    position: { x: 800, y: 600 },
-    data: { title: "TypeScript " },
-    parentNode: "4",
-  },
-
   {
     id: "5",
     type: "main",
     position: { x: 900, y: 900 },
-    data: { title: "Frameworks and Modern Tools" },
+    data: { 
+      title: "Frameworks and Modern Tools",
+      subtopics: [
+        { id: "5-1", title: "React.js" },
+        { id: "5-2", title: "Vue.js" },
+        { id: "5-3", title: "Angular" }
+      ]
+    },
   },
-  {
-    id: "5-1",
-    type: "subtopic",
-    position: { x: 800, y: 1100 },
-    data: { title: "React.js" },
-    parentNode: "5",
-  },
-  {
-    id: "5-2",
-    type: "subtopic",
-    position: { x: 900, y: 1300 },
-    data: { title: "Vue.js" },
-    parentNode: "5",
-  },
-  {
-    id: "5-3",
-    type: "subtopic",
-    position: { x: 1000, y: 1500 },
-    data: { title: "Angular" },
-    parentNode: "5",
-  },
-
   {
     id: "6",
     type: "main",
     position: { x: 1800, y: 200 },
-    data: { title: "Responsive and Accessible Design" },
+    data: { 
+      title: "Responsive and Accessible Design",
+      subtopics: [
+        { id: "6-1", title: "Mobile-First Design" },
+        { id: "6-2", title: "Accessibility (a11y)" }
+      ]
+    },
   },
-  {
-    id: "6-1",
-    type: "subtopic",
-    position: { x: 2000, y: 400 },
-    data: { title: "Mobile-First Design" },
-    parentNode: "6",
-  },
-  {
-    id: "6-2",
-    type: "subtopic",
-    position: { x: 1900, y: 600 },
-    data: { title: "Accessibility (a11y)" },
-    parentNode: "6",
-  },
-
   {
     id: "7",
     type: "main",
     position: { x: 1400, y: 800 },
-    data: { title: "Building and Deploying Projects" },
+    data: { 
+      title: "Building and Deploying Projects",
+      subtopics: [
+        { id: "7-1", title: "Build Tools" },
+        { id: "7-2", title: "Deploying Applications" }
+      ]
+    },
   },
-  {
-    id: "7-1",
-    type: "subtopic",
-    position: { x: 1400, y: 1100 },
-    data: { title: "Build Tools" },
-    parentNode: "7",
-  },
-  {
-    id: "7-2",
-    type: "subtopic",
-    position: { x: 1600, y: 1300 },
-    data: { title: "Deploying Applications" },
-    parentNode: "7",
-  },
-
   {
     id: "8",
     type: "main",
     position: { x: 2500, y: 200 },
-    data: { title: "Soft Skills and Market Preparation" },
+    data: { 
+      title: "Soft Skills and Market Preparation",
+      subtopics: [
+        { id: "8-1", title: "Working on Real Projects" },
+        { id: "8-2", title: "Interview Preparation" }
+      ]
+    },
   },
-  {
-    id: "8-1",
-    type: "subtopic",
-    position: { x: 2400, y: 400 },
-    data: { title: "Working on Real Projects" },
-    parentNode: "8",
-  },
-  {
-    id: "8-2",
-    type: "subtopic",
-    position: { x: 2600, y: 600 },
-    data: { title: "Interview Preparation" },
-    parentNode: "8",
-  },
-
   {
     id: "9",
     type: "main",
     position: { x: 2000, y: 900 },
-    data: { title: "Mastery and Specialization" },
-  },
-  {
-    id: "9-1",
-    type: "subtopic",
-    position: { x: 2200, y: 1100 },
-    data: { title: "Advanced Technologies" },
-    parentNode: "9",
-  },
-  {
-    id: "9-2",
-    type: "subtopic",
-    position: { x: 2100, y: 1300 },
-    data: { title: "Community Contributions" },
-    parentNode: "9",
-  },
-  {
-    id: "9-3",
-    type: "subtopic",
-    position: { x: 2000, y: 1500 },
-    data: { title: "Specialization" },
-    parentNode: "9",
+    data: { 
+      title: "Mastery and Specialization",
+      subtopics: [
+        { id: "9-1", title: "Advanced Technologies" },
+        { id: "9-2", title: "Community Contributions" },
+        { id: "9-3", title: "Specialization" }
+      ]
+    },
   },
 ];
 
 const roadmapEdges = [
-    // Main path edges
     { id: "e1-2", source: "1", target: "2", type: "main" },
     { id: "e2-3", source: "2", target: "3", type: "main" },
     { id: "e3-4", source: "3", target: "4", type: "main" },
@@ -260,41 +358,7 @@ const roadmapEdges = [
     { id: "e5-6", source: "5", target: "6", type: "main" },
     { id: "e6-7", source: "6", target: "7", type: "main" },
     { id: "e7-8", source: "7", target: "8", type: "main" },
-    { id: "e8-9", source: "8", target: "9", type: "main" },
-  
-    // Subtopic edges
-    { id: "e1-1-1", source: "1", target: "1-1", type: "subtopic" },
-    { id: "e1-1-2", source: "1-1", target: "1-2", type: "subtopic" },
-  
-    { id: "e2-1-1", source: "2", target: "2-1", type: "subtopic" },
-    { id: "e2-1-2", source: "2-1", target: "2-2", type: "subtopic" },
-    { id: "e2-2-3", source: "2-2", target: "2-3", type: "subtopic" },
-  
-    { id: "e3-1-1", source: "3", target: "3-1", type: "subtopic" },
-    { id: "e3-1-2", source: "3-1", target: "3-2", type: "subtopic" },
-  
-    { id: "e4-1-1", source: "4", target: "4-1", type: "subtopic" },
-    { id: "e4-1-2", source: "4-1", target: "4-2", type: "subtopic" },
-    { id: "e4-2-3", source: "4-2", target: "4-3", type: "subtopic" },
-    { id: "e4-3-4", source: "4-3", target: "4-4", type: "subtopic" },
-  
-    { id: "e5-1-1", source: "5", target: "5-1", type: "subtopic" },
-    { id: "e5-1-2", source: "5-1", target: "5-2", type: "subtopic" },
-    { id: "e5-2-3", source: "5-2", target: "5-3", type: "subtopic" },
-  
-    { id: "e6-1-1", source: "6", target: "6-1", type: "subtopic" },
-    { id: "e6-1-2", source: "6-1", target: "6-2", type: "subtopic" },
-  
-    { id: "e7-1-1", source: "7", target: "7-1", type: "subtopic" },
-    { id: "e7-1-2", source: "7-1", target: "7-2", type: "subtopic" },
-  
-    { id: "e8-1-1", source: "8", target: "8-1", type: "subtopic" },
-    { id: "e8-1-2", source: "8-1", target: "8-2", type: "subtopic" },
-  
-    { id: "e9-1-1", source: "9", target: "9-1", type: "subtopic" },
-    { id: "e9-1-2", source: "9-1", target: "9-2", type: "subtopic" },
-    { id: "e9-2-3", source: "9-2", target: "9-3", type: "subtopic" },
-  ];
-  
+    { id: "e8-9", source: "8", target: "9", type: "main" }
+];
 
 export { roadmapNodes, roadmapEdges };

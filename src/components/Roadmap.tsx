@@ -1,5 +1,5 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactFlow, Background, Controls, Node } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { roadmapNodes, roadmapEdges } from '@/data/constants/roadmapFrontend.constant';
@@ -11,19 +11,18 @@ import TopicEdge from './edge-type/TopicEdge';
 
 const merriweather = Merriweather({ subsets: ['latin'], weight: '700' });
 
-// Define node types
 const nodeTypes = {
   main: MainTopicNode,
   subtopic: TopicNode,
 };
 
-// Define edge types
 const edgeTypes = {
   main: MainEdge,
   subtopic: TopicEdge,
 };
 
 export default function RoadmapFlow() {
+  const [activeNodeResources, setActiveNodeResources] = useState<{ title: string; url: string }[]>([]);
   const nodes = roadmapNodes.map((node) => ({
     ...node,
     style: {
@@ -37,7 +36,11 @@ export default function RoadmapFlow() {
   }));
 
   const onNodeClick = (event: React.MouseEvent, node: Node) => {
-    console.log('Clicked node:', node);
+    if (node.type === "main") {
+      const relatedSubtopics = roadmapNodes.filter((subNode) => subNode.parentNode === node.id);
+      const resources = relatedSubtopics.flatMap((subNode) => subNode.data.resources || []);
+      setActiveNodeResources(resources);
+    }
   };
 
   return (
@@ -46,12 +49,12 @@ export default function RoadmapFlow() {
         Front-end Development Roadmap
       </h1>
       <div className="h-[90%] w-full shadow-md rounded-lg overflow-hidden bg-white">
-        <ReactFlow 
-          nodes={nodes} 
-          edges={edges} 
+        <ReactFlow
+          nodes={nodes}
+          edges={edges}
           nodeTypes={nodeTypes}
           edgeTypes={edgeTypes}
-          fitView 
+          fitView
           onNodeClick={onNodeClick}
         >
           <Background color="#ddd" gap={16} />

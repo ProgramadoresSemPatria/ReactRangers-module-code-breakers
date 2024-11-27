@@ -32,8 +32,14 @@ export default function ResourcesList({ resources, subtopicId }: Readonly<Resour
             return count + (progress[key] === 100 ? 1 : 0);
         }, 0);
 
+        // Calculate the percentage and update subtopic progress
         const overallProgress = (updatedProgress / resources.length) * 100;
         updateProgress(subtopicId, overallProgress);
+
+        // If all resources are completed, ensure subtopic is marked as complete
+        if (overallProgress === 100) {
+            updateProgress(subtopicId, 100);
+        }
     };
 
     return (

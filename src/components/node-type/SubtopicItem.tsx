@@ -13,18 +13,31 @@ interface SubtopicItemProps {
 export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) {
     const { progress, updateProgress } = useProgress();
     const handleCompletion = () => {
-        const newValue = 100;
+        const newValue = progress[subtopic.id] === 100 ? 0 : 100;
         updateProgress(subtopic.id, newValue);
+
+        // Check  all resources when subtopic checkbox is checked
+        if (newValue === 100 && subtopic.resources) {
+            subtopic.resources.forEach(resource => {
+                const resourceKey = `${subtopic.id}-${resource.title}`;
+                updateProgress(resourceKey, 100);
+            });
+        }
     };
 
     const subtopicProgress = progress[subtopic.id] ?? 0;
+    const isCompleted = subtopicProgress === 100;
+
     return (
         <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
             <Sheet>
                 <SheetTrigger asChild>
                     <div className='flex flex-col gap-2'>
                         <div className='flex items-center gap-2'>
-                            <Checkbox onClick={handleCompletion} />
+                            <Checkbox 
+                                checked={isCompleted}
+                                onCheckedChange={handleCompletion} 
+                            />
                             <h4 className="cursor-pointer font-semibold text-indigo-650">{subtopic.title}</h4>
                         </div>
                         <Progress value={subtopicProgress} />

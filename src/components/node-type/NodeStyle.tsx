@@ -3,14 +3,28 @@ import { motion } from 'framer-motion'
 import React from 'react'
 import useProgress from "@/data/hooks/useProgress";
 import { Progress } from "../ui/progress";
+import { Subtopic } from '@/data/interface';
 
 interface NodeStyleProps {
     title: string;
+    subtopics?: Subtopic[];
 }
 
-export default function NodeStyle({ title }: Readonly<NodeStyleProps>) {
+export default function NodeStyle({ title, subtopics }: Readonly<NodeStyleProps>) {
   const { progress } = useProgress();
-  const topicProgress = progress[title] ?? 0;
+
+  const calculateNodeProgress = () => {
+    if (!subtopics || subtopics.length === 0) return 0;
+
+    const totalProgress = subtopics.reduce((sum, subtopic) => {
+      const subtopicProgress = progress[subtopic.id] ?? 0;
+      return sum + subtopicProgress;
+    }, 0);
+
+    return totalProgress / subtopics.length;
+  };
+
+  const nodeProgress = calculateNodeProgress();
 
   return (
     <>
@@ -25,7 +39,7 @@ export default function NodeStyle({ title }: Readonly<NodeStyleProps>) {
               {title}
             </div>
             <div>
-              <Progress value={topicProgress} />      
+              <Progress value={nodeProgress} />      
             </div>
           </motion.div>
       <Handle type="source" position={Position.Bottom} />

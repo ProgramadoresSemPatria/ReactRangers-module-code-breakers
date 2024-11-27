@@ -16,9 +16,9 @@ export default function MainTopicNode({ data }: Readonly<MainTopicNodeProps>) {
     <Sheet>
       <SheetTrigger asChild>
         <div>
-          <NodeStyle title={data.title} />
+          <NodeStyle title={data.title} subtopics={data.subtopics} />
         </div>
-    </SheetTrigger>
+      </SheetTrigger>
       <SheetContent className='lg:min-w-[800px]'>
         <SheetHeader>
           <SheetTitle>{data.title}</SheetTitle>
@@ -34,7 +34,7 @@ export default function MainTopicNode({ data }: Readonly<MainTopicNodeProps>) {
             <h3 className="text-lg font-semibold mb-3">Subtopics</h3>
             <div className="space-y-4">
               {data.subtopics.map((subtopic) => (
-                <SubtopicItem  key={subtopic.id} subtopic={subtopic} />
+                <SubtopicItem key={subtopic.id} subtopic={subtopic} />
               ))}
             </div>
           </div>

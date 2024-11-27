@@ -16,7 +16,7 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
         updateProgress(subtopic.id, newValue);
     };
 
-    const subtopicProgress = progress[subtopic.title] ?? 0;
+    const subtopicProgress = progress[subtopic.id] ?? 0;
     return (
         <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
             <Sheet>
@@ -35,7 +35,7 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
 
                 <SheetContent>
                     <SheetHeader>
-                        <SheetTitle>{subtopic.title}: {subtopicProgress}</SheetTitle>
+                        <SheetTitle>{subtopic.title}</SheetTitle>
                         {subtopic.description && (
                             <SheetDescription>
                                 {subtopic.description}
@@ -45,7 +45,6 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
                     {subtopic.resources && subtopic.resources.length > 0 && (
                         <ResourcesList resources={subtopic.resources} subtopicId={subtopic.id} />
                     )}
-
                 </SheetContent>
             </Sheet>
         </div>

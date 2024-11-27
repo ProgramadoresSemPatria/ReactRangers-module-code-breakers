@@ -4,6 +4,7 @@ import ResourcesList from './ResourcesList'
 import { Subtopic } from '@/data/interface'
 import useProgress from '@/data/hooks/useProgress';
 import { Progress } from '../ui/progress';
+import { Checkbox } from '../ui/checkbox';
 
 interface SubtopicItemProps {
     subtopic: Subtopic;
@@ -12,23 +13,33 @@ interface SubtopicItemProps {
 export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) {
     const { progress, updateProgress } = useProgress();
     const handleCompletion = () => {
-        const newValue = 100;
-        updateProgress(subtopic.title, newValue);
+        const newValue = progress[subtopic.id] === 100 ? 0 : 100;
+        updateProgress(subtopic.id, newValue);
+
+        // Check  all resources when subtopic checkbox is checked
+        if (newValue === 100 && subtopic.resources) {
+            subtopic.resources.forEach(resource => {
+                const resourceKey = `${subtopic.id}-${resource.title}`;
+                updateProgress(resourceKey, 100);
+            });
+        }
     };
 
-    const subtopicProgress = progress[subtopic.title] ?? 0;
+    const subtopicProgress = progress[subtopic.id] ?? 0;
+    const isCompleted = subtopicProgress === 100;
+
     return (
         <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
             <Sheet>
                 <SheetTrigger asChild>
-                    <div>
-                        <h4 className="cursor-pointer font-semibold text-indigo-650">{subtopic.title}</h4>
-                        <button
-                            onClick={handleCompletion}
-                            className="px-2 py-1 text-sm bg-indigo-600 text-white rounded"
-                        >
-                            Completar
-                        </button>
+                    <div className='flex flex-col gap-2'>
+                        <div className='flex items-center gap-2'>
+                            <Checkbox 
+                                checked={isCompleted}
+                                onCheckedChange={handleCompletion} 
+                            />
+                            <h4 className="cursor-pointer font-semibold text-indigo-650">{subtopic.title}</h4>
+                        </div>
                         <Progress value={subtopicProgress} />
                     </div>
                 </SheetTrigger>
@@ -45,7 +56,6 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
                     {subtopic.resources && subtopic.resources.length > 0 && (
                         <ResourcesList resources={subtopic.resources} subtopicId={subtopic.id} />
                     )}
-
                 </SheetContent>
             </Sheet>
         </div>

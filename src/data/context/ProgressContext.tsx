@@ -2,21 +2,27 @@
 import { createContext, useCallback, useEffect, useMemo, useState } from "react";
 import { ProgressContextType } from "../interface";
 
-const ProgressContext = createContext<ProgressContextType>({} as ProgressContextType)
+const ProgressContext = createContext<ProgressContextType>({} as ProgressContextType);
+
 interface ProgressProviderProps {
     children: React.ReactNode;
 }
 
 export function ProgressProvider({ children }: Readonly<ProgressProviderProps>) {
-    const [progress, setProgress] = useState<Record<string, number>>(() => {
+    const [progress, setProgress] = useState<Record<string, number>>({}); 
+    useEffect(() => {
         const storedProgress = localStorage.getItem('progress');
-        return storedProgress ? JSON.parse(storedProgress) : {};
-    });
+        if (storedProgress) {
+            setProgress(JSON.parse(storedProgress));
+        }
+    }, []);
 
     useEffect(() => {
-        localStorage.setItem('progress', JSON.stringify(progress));
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('progress', JSON.stringify(progress));
+        }
     }, [progress]);
-    
+
     const updateProgress = useCallback((id: string, value: number) => {
         setProgress((prev) => ({ ...prev, [id]: value }));
     }, [setProgress]);
@@ -31,4 +37,5 @@ export function ProgressProvider({ children }: Readonly<ProgressProviderProps>) 
         </ProgressContext.Provider>
     );
 }
-export default ProgressContext
+
+export default ProgressContext;

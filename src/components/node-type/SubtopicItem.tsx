@@ -13,7 +13,7 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
     const { progress, updateProgress } = useProgress();
     const handleCompletion = () => {
         const newValue = 100;
-        updateProgress(subtopic.title, newValue);
+        updateProgress(subtopic.id, newValue);
     };
 
     const subtopicProgress = progress[subtopic.title] ?? 0;
@@ -35,7 +35,7 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
 
                 <SheetContent>
                     <SheetHeader>
-                        <SheetTitle>{subtopic.title}</SheetTitle>
+                        <SheetTitle>{subtopic.title}: {subtopicProgress}</SheetTitle>
                         {subtopic.description && (
                             <SheetDescription>
                                 {subtopic.description}

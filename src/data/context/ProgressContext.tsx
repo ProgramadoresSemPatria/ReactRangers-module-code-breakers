@@ -12,9 +12,11 @@ export function ProgressProvider({ children }: Readonly<ProgressProviderProps>) 
         const storedProgress = localStorage.getItem('progress');
         return storedProgress ? JSON.parse(storedProgress) : {};
     });
+
     useEffect(() => {
         localStorage.setItem('progress', JSON.stringify(progress));
     }, [progress]);
+    
     const updateProgress = useCallback((id: string, value: number) => {
         setProgress((prev) => ({ ...prev, [id]: value }));
     }, [setProgress]);

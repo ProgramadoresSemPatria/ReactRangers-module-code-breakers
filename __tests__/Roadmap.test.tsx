@@ -1,7 +1,7 @@
-import { render, screen} from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import '@testing-library/jest-dom';
-import Home from "../src/app/page";
-
+import { ProgressProvider } from "../src/data/context/ProgressContext";
+import RoadmapFlow from "@/components/Roadmap";
 
 interface ProgressProviderProps {
     children: React.ReactNode;
@@ -15,10 +15,16 @@ jest.mock('@xyflow/react', () => ({
 }))
 
 describe("Home Component", () => {
-    it("should render home title", () => {
-        render(<Home />);
-
+   
+    it("should render the roadmap component", () => {
+        render(
+          <ProgressProvider>
+            <RoadmapFlow />
+          </ProgressProvider>
+        );
+    
         const title = screen.getByText(/Front-end Development Roadmap/i);
         expect(title).toBeInTheDocument();
-    })
+      });
+      
 })

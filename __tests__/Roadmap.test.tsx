@@ -15,7 +15,6 @@ jest.mock('@xyflow/react', () => ({
 }))
 
 describe("Home Component", () => {
-   
     it("should render the roadmap component", () => {
         render(
           <ProgressProvider>

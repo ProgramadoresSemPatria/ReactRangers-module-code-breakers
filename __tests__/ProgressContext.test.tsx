@@ -1,7 +1,7 @@
 import React from "react";
-import { renderHook } from "@testing-library/react";
+import { renderHook, act } from "@testing-library/react";
 import useProgress from "@/data/hooks/useProgress";
-import { ProgressProvider } from "@/data/context/ProgressContext";
+import ProgressContext, { ProgressProvider } from "@/data/context/ProgressContext";
 
 describe('ProgressProvider', () => {
     const wrapper = ({ children }: { children: React.ReactNode }) => (
@@ -12,5 +12,13 @@ describe('ProgressProvider', () => {
         localStorage.setItem('progress', JSON.stringify(mockProgress))
         const { result } = renderHook(() => useProgress(), { wrapper });
         expect(result.current.progress).toEqual(mockProgress)
+    })
+    test('should update subtopic progress correctly', () => {
+        const { result } = renderHook(() => React.useContext(ProgressContext), { wrapper });
+
+        act(() => {
+            result.current.updateProgress('subtopic-1', 100)
+        })
+        expect(result.current.progress['subtopic-1']).toBe(100);
     })
 })

@@ -21,4 +21,27 @@ describe('ProgressProvider', () => {
         })
         expect(result.current.progress['subtopic-1']).toBe(100);
     })
+    test('should update feature progress and calculates overall subtopic progress', () => {
+        const mockResources = ['resource-1', 'resource-2']
+        const subtopicId = 'subtopic-1'
+
+        const { result } = renderHook(() => React.useContext(ProgressContext), { wrapper })
+
+        act(() => {
+            result.current.updateProgress(`${subtopicId}-${mockResources[0]}`, 100);
+        });
+
+        expect(result.current.progress[`${subtopicId}-${mockResources[0]}`]).toBe(100);
+
+        act(() => {
+            const totalCompleted = mockResources.reduce((acc, resource) => {
+                const key = `${subtopicId}-${resource}`;
+                return acc + (result.current.progress[key] || 0);
+            }, 0)
+
+            const overallProgress = (totalCompleted / (mockResources.length * 100)) * 100;
+            result.current.updateProgress(subtopicId, overallProgress);
+        })
+        expect(result.current.progress[subtopicId]).toBe(50);
+    })
 })

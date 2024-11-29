@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,7 +15,7 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TrailMap – Trilha de Desenvolvimento Front-End em 3D",
+  title: "TrailMap – Trilha de Desenvolvimento Front-End em 3RD",
   description:
     "Explore a trilha completa de desenvolvimento front-end em um mapa interativo 3D. Comece pelos fundamentos e avance até técnicas avançadas, frameworks e ferramentas essenciais.",
   keywords: [
@@ -66,7 +67,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <Navbar />
+        <main className="pt-16">
+          {children}
+        </main>
       </body>
     </html>
   );

@@ -19,7 +19,7 @@ export default function MainTopicNode({ data }: Readonly<MainTopicNodeProps>) {
           <NodeStyle title={data.title} subtopics={data.subtopics} />
         </div>
       </SheetTrigger>
-      <SheetContent className='lg:min-w-[800px]'>
+      <SheetContent className='lg:min-w-[800px] overflow-auto '>
         <SheetHeader>
           <SheetTitle>{data.title}</SheetTitle>
           {data.description && (

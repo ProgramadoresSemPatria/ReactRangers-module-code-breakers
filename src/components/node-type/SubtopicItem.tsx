@@ -33,21 +33,26 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
         <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
             <Accordion type="single" collapsible>
                 <AccordionItem value={subtopic.id}>
-                    <div className="flex items-center gap-2 py-4">
+                    <div className="flex items-center gap-2 py-4 ">
                         <div onClick={handleCompletion}>
                             <Checkbox 
                                 checked={isCompleted}
                                 className="cursor-pointer"
                             />
                         </div>
-                        <AccordionTrigger className="flex-1">
-                            <div className='flex flex-col gap-2 w-full'>
-                                <h4 className="cursor-pointer font-semibold text-indigo-650 text-left">{subtopic.title}</h4>
-                                <Progress value={subtopicProgress} />
-                            </div>
-                        </AccordionTrigger>
+                        <div className='w-full'>
+                            <AccordionTrigger className="w-full">
+                                <div className='flex flex-col gap-2 w-full'>
+                                    <h4 className="cursor-pointer font-semibold text-indigo-650 text-left">{subtopic.title}</h4>
+                                    <Progress value={subtopicProgress} />
+                                </div>
+                            </AccordionTrigger>
+                        </div>
                     </div>
                     <AccordionContent>
+                        {subtopic.description && (
+                            <p className="text-gray-600 mb-4">{subtopic.description}</p>
+                        )}
                         {subtopic.resources && subtopic.resources.length > 0 && (
                             <ResourcesList resources={subtopic.resources} subtopicId={subtopic.id} />
                         )}

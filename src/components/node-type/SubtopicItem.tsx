@@ -17,11 +17,10 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
         const newValue = progress[subtopic.id] === 100 ? 0 : 100;
         updateProgress(subtopic.id, newValue);
 
-        // Check all resources when subtopic checkbox is checked
-        if (newValue === 100 && subtopic.resources) {
+        if (subtopic.resources) {
             subtopic.resources.forEach(resource => {
                 const resourceKey = `${subtopic.id}-${resource.title}`;
-                updateProgress(resourceKey, 100);
+                updateProgress(resourceKey, newValue);
             });
         }
     };

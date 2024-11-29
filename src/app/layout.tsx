@@ -15,14 +15,14 @@ const geistMono = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "TrailMap – Trilha de Desenvolvimento Front-End em 3RD",
+  title: "Roadmap",
   description:
-    "Explore a trilha completa de desenvolvimento front-end em um mapa interativo 3D. Comece pelos fundamentos e avance até técnicas avançadas, frameworks e ferramentas essenciais.",
+    "Explore a complete frontend roadmap with an interactive 3D map. Start by the basics and advance to advanced techniques, frameworks, and essential tools.",
   keywords: [
-    "TrailMap",
-    "desenvolvimento front-end",
-    "mapa 3D",
-    "trilha de aprendizado",
+    "Roadmap",
+    "frontend development",
+    "3D map",
+    "learning path",
     "React",
     "Next.js",
     "Three.js",
@@ -33,16 +33,16 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1.0",
   robots: "index, follow",
   openGraph: {
-    title: "TrailMap – Trilha de Desenvolvimento Front-End em 3D",
+    title: "Roadmap – Complete frontend roadmap with an interactive 3D map",
     description:
-      "Explore um caminho interativo para desenvolvimento front-end em um mapa 3D inovador.",
+      "Explore a complete frontend roadmap with an interactive 3D map.",
     type: "website",
     images: [
       {
         url: "/images/trailmap-thumbnail.jpg", 
         width: 1200,
         height: 630,
-        alt: "TrailMap - Um mapa 3D interativo para desenvolvimento front-end",
+        alt: "Roadmap - Complete frontend roadmap with an interactive 3D map",
       },
     ],
   },
@@ -62,7 +62,10 @@ export default function RootLayout({
           name="author"
           content="Luan Alves de Paiva & Arthur Duarte"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

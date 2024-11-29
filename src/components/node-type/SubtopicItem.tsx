@@ -1,5 +1,5 @@
 import React from 'react'
-import { Sheet, SheetTrigger, SheetTitle, SheetDescription, SheetContent, SheetHeader } from '../ui/sheet'
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import ResourcesList from './ResourcesList'
 import { Subtopic } from '@/data/interface'
 import useProgress from '@/data/hooks/useProgress';
@@ -12,11 +12,12 @@ interface SubtopicItemProps {
 
 export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) {
     const { progress, updateProgress } = useProgress();
-    const handleCompletion = () => {
+    const handleCompletion = (e: React.MouseEvent) => {
+        e.stopPropagation(); // Prevent accordion from toggling when clicking checkbox
         const newValue = progress[subtopic.id] === 100 ? 0 : 100;
         updateProgress(subtopic.id, newValue);
 
-        // Check  all resources when subtopic checkbox is checked
+        // Check all resources when subtopic checkbox is checked
         if (newValue === 100 && subtopic.resources) {
             subtopic.resources.forEach(resource => {
                 const resourceKey = `${subtopic.id}-${resource.title}`;
@@ -30,34 +31,29 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
 
     return (
         <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
-            <Sheet>
-                <SheetTrigger asChild>
-                    <div className='flex flex-col gap-2'>
-                        <div className='flex items-center gap-2'>
+            <Accordion type="single" collapsible>
+                <AccordionItem value={subtopic.id}>
+                    <div className="flex items-center gap-2 py-4">
+                        <div onClick={handleCompletion}>
                             <Checkbox 
                                 checked={isCompleted}
-                                onCheckedChange={handleCompletion} 
+                                className="cursor-pointer"
                             />
-                            <h4 className="cursor-pointer font-semibold text-indigo-650">{subtopic.title}</h4>
                         </div>
-                        <Progress value={subtopicProgress} />
+                        <AccordionTrigger className="flex-1">
+                            <div className='flex flex-col gap-2 w-full'>
+                                <h4 className="cursor-pointer font-semibold text-indigo-650 text-left">{subtopic.title}</h4>
+                                <Progress value={subtopicProgress} />
+                            </div>
+                        </AccordionTrigger>
                     </div>
-                </SheetTrigger>
-
-                <SheetContent>
-                    <SheetHeader>
-                        <SheetTitle>{subtopic.title}</SheetTitle>
-                        {subtopic.description && (
-                            <SheetDescription>
-                                {subtopic.description}
-                            </SheetDescription>
+                    <AccordionContent>
+                        {subtopic.resources && subtopic.resources.length > 0 && (
+                            <ResourcesList resources={subtopic.resources} subtopicId={subtopic.id} />
                         )}
-                    </SheetHeader>
-                    {subtopic.resources && subtopic.resources.length > 0 && (
-                        <ResourcesList resources={subtopic.resources} subtopicId={subtopic.id} />
-                    )}
-                </SheetContent>
-            </Sheet>
+                    </AccordionContent>
+                </AccordionItem>        
+            </Accordion>
         </div>
     )
 }

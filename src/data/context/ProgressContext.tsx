@@ -24,13 +24,16 @@ export function ProgressProvider({ children }: Readonly<ProgressProviderProps>) 
             localStorage.setItem('progress', JSON.stringify(progress));
         }
 
-        const allCompleted = Object.values(progress).every(value => value === 100);
+        console.log("Progress:", progress);
+        const progressValues = Object.values(progress);
+        const allCompleted = progressValues.length > 0 && progressValues.every(value => value === 100);
+        console.log("All completed:", allCompleted);
         if (allCompleted) {
             setIsCongratulationsVisible(true);
 
             const timer = setTimeout(() => {
                 setIsCongratulationsVisible(false);
-            }, 10000);
+            }, 3000);
 
             return () => clearTimeout(timer);
         } else {
@@ -68,7 +71,7 @@ export function ProgressProvider({ children }: Readonly<ProgressProviderProps>) 
                             Congratulations!
                         </h2>
                         <p className="max-w-xl mx-auto text-sm md:text-lg text-yellow-300 dark:text-yellow-200 text-center">
-                            You&apos;ve completed all the challenges! Enjoy your success!
+                            You&apos;ve completed all the resources! Way to go!
                         </p>
                     </BackgroundLines>
                 </div>

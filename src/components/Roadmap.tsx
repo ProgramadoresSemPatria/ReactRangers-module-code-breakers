@@ -49,11 +49,11 @@ export default function RoadmapFlow() {
   };
 
   return (
-    <main className={"h-screen bg-gray-50 p-4" + merriweather.className}>
-      <h1 className="text-2xl font-bold text-indigo-650 my-4 text-center">
+    <main className={"h-screen bg-[#212226] p-4" + merriweather.className}>
+      <h1 className="text-2xl font-bold text-[#ddd] py-4 text-center">
         Front-end Development Roadmap
       </h1>
-      <section className="h-[90%] w-full shadow-md rounded-lg overflow-hidden bg-white">
+      <section className="h-[90%] w-full shadow-md rounded-lg overflow-hidden bg-[#212226]">
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -62,7 +62,7 @@ export default function RoadmapFlow() {
           fitView
           onNodeClick={onNodeClick}
         >
-          <Background color="#ddd" gap={16} />
+          <Background color="#18191b" gap={16} />
           <Controls />
         </ReactFlow>
       </section>

@@ -69,21 +69,27 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  :root {
+    --scrollbar-thumb: #4814b0;
+  }
+  .dark {
+    --scrollbar-thumb: #28d3a0;
+  }
 }
 
 @layer utilities {
   ::-webkit-scrollbar {
-    width: 10px; 
-    background-color: #030712; 
+    width: 10px;
+    background-color: #030712;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #28d3a0;
-    border-radius: 9999px; 
+    background-color: var(--scrollbar-thumb);
+    border-radius: 9999px;
   }
 
   ::-webkit-scrollbar-track {
-    background-color: #030712; 
+    background-color: #030712;
   }
 }
 

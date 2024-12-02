@@ -45,7 +45,7 @@ export default function ResourcesList({ resources, subtopicId }: Readonly<Resour
                 {resources.map((resource) => {
                     const resourceKey = `${subtopicId}-${resource.title}`;
                     const isCompleted = progress[resourceKey] === 100;
-                    
+
                     return (
                         <div key={resource.title} className="flex items-center space-x-2">
                             <Checkbox

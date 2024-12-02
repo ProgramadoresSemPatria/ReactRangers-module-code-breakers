@@ -8,6 +8,7 @@ import MainTopicNode from './node-type/MainNode';
 import MainEdge from '@/data/hooks/useMainEdger';
 import TopicEdge from '@/data/hooks/useTopicEdger';
 import { Resource } from '@/data/interface';
+import useTheme from '@/data/hooks/useTheme';
 
 const merriweather = Merriweather({ subsets: ['latin'], weight: '700' });
 
@@ -20,6 +21,7 @@ const edgeTypes = {
 };
 
 export default function RoadmapFlow() {
+  const {theme} = useTheme()
   const [activeNodeResources, setActiveNodeResources] = useState<Resource[]>([]);
   
   const nodes = roadmapNodes.map((node) => ({
@@ -49,11 +51,11 @@ export default function RoadmapFlow() {
   };
 
   return (
-    <main className={"h-screen bg-gray-950 p-4 " + merriweather.className}>
-      <h1 className="text-2xl font-bold text-[#ddd] py-4 text-center">
+    <main className={`h-screen ${theme === 'dark' ? 'bg-gray-950 ' : 'bg-stone-50'} p-4  ${merriweather.className}`}>
+      <h1 className={`text-2xl font-bold py-4 text-center ${theme === 'dark' && 'text-white'}`}>
         Front-end Development Roadmap
       </h1>
-      <section className="h-[90%] w-full shadow-md rounded-lg overflow-hidden bg-gray-900">
+      <section className={`h-[90%] w-full shadow-md rounded-lg overflow-hidden ${theme === 'dark' ?  'bg-gray-900' : 'bg-slate-200'}`}>
         <ReactFlow
           nodes={nodes}
           edges={edges}

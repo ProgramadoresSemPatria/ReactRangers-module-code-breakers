@@ -13,7 +13,7 @@ interface SubtopicItemProps {
 export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) {
     const { progress, updateProgress } = useProgress();
     const handleCompletion = (e: React.MouseEvent) => {
-        e.stopPropagation(); 
+        e.stopPropagation();
         const newValue = progress[subtopic.id] === 100 ? 0 : 100;
         updateProgress(subtopic.id, newValue);
 
@@ -29,12 +29,12 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
     const isCompleted = subtopicProgress === 100;
 
     return (
-        <div key={subtopic.id} className="p-4 bg-gray-50 rounded-lg">
+        <div key={subtopic.id} className="p-4 bg-slate-200 rounded-lg">
             <Accordion type="single" collapsible>
                 <AccordionItem value={subtopic.id}>
                     <div className="flex items-center gap-2 py-4 ">
                         <div onClick={handleCompletion}>
-                            <Checkbox 
+                            <Checkbox
                                 checked={isCompleted}
                                 className="cursor-pointer"
                             />
@@ -50,13 +50,13 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
                     </div>
                     <AccordionContent>
                         {subtopic.description && (
-                            <p className="text-gray-600 mb-4">{subtopic.description}</p>
+                            <p className=" mb-4">{subtopic.description}</p>
                         )}
                         {subtopic.resources && subtopic.resources.length > 0 && (
                             <ResourcesList resources={subtopic.resources} subtopicId={subtopic.id} />
                         )}
                     </AccordionContent>
-                </AccordionItem>        
+                </AccordionItem>
             </Accordion>
         </div>
     )

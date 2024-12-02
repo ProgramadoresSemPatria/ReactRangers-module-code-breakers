@@ -49,11 +49,11 @@ export default function RoadmapFlow() {
   };
 
   return (
-    <main className={"h-screen bg-[#212226] p-4" + merriweather.className}>
+    <main className={"h-screen bg-gray-950 p-4 " + merriweather.className}>
       <h1 className="text-2xl font-bold text-[#ddd] py-4 text-center">
         Front-end Development Roadmap
       </h1>
-      <section className="h-[90%] w-full shadow-md rounded-lg overflow-hidden bg-[#212226]">
+      <section className="h-[90%] w-full shadow-md rounded-lg overflow-hidden bg-gray-900">
         <ReactFlow
           nodes={nodes}
           edges={edges}
@@ -68,7 +68,7 @@ export default function RoadmapFlow() {
       </section>
 
       {activeNodeResources.length > 0 && (
-        <div className="mt-4 p-4 bg-gray-200 rounded-md">
+        <div className="mt-4 p-4  rounded-md">
           <h3 className="text-xl font-semibold mb-3">Active Node Resources</h3>
           <ul>
             {activeNodeResources.map((resource) => (

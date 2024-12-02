@@ -26,7 +26,7 @@ export default function MainEdge({
       style={{
         ...style,
         strokeWidth: 4,
-        stroke: '#4814b0',
+        stroke: '#28d3a0',
       }}
     />
   );

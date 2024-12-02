@@ -50,7 +50,7 @@ export default function RoadmapFlow() {
 
   return (
     <main className={"h-screen bg-gray-50 p-4" + merriweather.className}>
-      <h1 className="text-2xl font-bold text-indigo-650 mb-4 text-center">
+      <h1 className="text-2xl font-bold text-indigo-650 my-4 text-center">
         Front-end Development Roadmap
       </h1>
       <section className="h-[90%] w-full shadow-md rounded-lg overflow-hidden bg-white">

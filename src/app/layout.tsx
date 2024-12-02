@@ -1,7 +1,7 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import Navbar from "@/components/shared/Header";
+import Header from "@/components/shared/Header";
+import { ThemeProvider } from "@/data/context/ThemeContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -14,53 +14,33 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "Roadmap",
-  description:
-    "Explore a complete frontend roadmap with an interactive 3D map. Start by the basics and advance to advanced techniques, frameworks, and essential tools.",
-  keywords: [
-    "Roadmap",
-    "frontend development",
-    "3D map",
-    "learning path",
-    "React",
-    "Next.js",
-    "Three.js",
-    "JavaScript",
-    "CSS",
-    "HTML",
-  ],
-  viewport: "width=device-width, initial-scale=1.0",
-  robots: "index, follow",
-  openGraph: {
-    title: "Roadmap – Complete frontend roadmap with an interactive 3D map",
-    description:
-      "Explore a complete frontend roadmap with an interactive 3D map.",
-    type: "website",
-    images: [
-      {
-        url: "/images/trailmap-thumbnail.jpg", 
-        width: 1200,
-        height: 630,
-        alt: "Roadmap - Complete frontend roadmap with an interactive 3D map",
-      },
-    ],
-  },
- 
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="pt">
+    <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta
           name="author"
           content="Luan Alves de Paiva & Arthur Duarte"
+        />
+        <title>Roadmap</title>
+        <meta
+          name="description"
+          content="This system serves as a roadmap for front-end development, offering structured guidance on building modern, scalable web applications."
+        />
+        <meta
+          name="keywords"
+          content="front-end development, roadmap, web development, React, Next.js, modern web applications, UI/UX design"
+        />
+        <meta
+          name="robots"
+          content="index, follow"
         />
         <link
           rel="icon"
@@ -70,8 +50,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Navbar />
-        {children}
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

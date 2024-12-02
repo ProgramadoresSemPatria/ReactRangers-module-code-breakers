@@ -40,7 +40,7 @@ export default function ResourcesList({ resources, subtopicId }: Readonly<Resour
 
     return (
         <div className="mt-2">
-            <h4 className="text-lg font-semibold mb-3">Resources:</h4>
+            <h4 className={`text-lg font-semibold mb-3 text-black`}>Resources:</h4>
             <div className="flex flex-col gap-2 mt-1">
                 {resources.map((resource) => {
                     const resourceKey = `${subtopicId}-${resource.title}`;

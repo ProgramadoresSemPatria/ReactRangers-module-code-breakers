@@ -50,7 +50,7 @@ export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) 
                     </div>
                     <AccordionContent>
                         {subtopic.description && (
-                            <p className=" mb-4">{subtopic.description}</p>
+                            <p className="text-black mb-4">{subtopic.description}</p>
                         )}
                         {subtopic.resources && subtopic.resources.length > 0 && (
                             <ResourcesList resources={subtopic.resources} subtopicId={subtopic.id} />

@@ -13,7 +13,7 @@ interface SubtopicItemProps {
 export default function SubtopicItem({ subtopic }: Readonly<SubtopicItemProps>) {
     const { progress, updateProgress } = useProgress();
     const handleCompletion = (e: React.MouseEvent) => {
-        e.stopPropagation(); // Prevent accordion from toggling when clicking checkbox
+        e.stopPropagation(); 
         const newValue = progress[subtopic.id] === 100 ? 0 : 100;
         updateProgress(subtopic.id, newValue);
 

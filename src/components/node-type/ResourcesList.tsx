@@ -17,11 +17,9 @@ export default function ResourcesList({ resources, subtopicId }: Readonly<Resour
     const handleResourceClick = (resourceTitle: string) => {
         const resourceKey = `${subtopicId}-${resourceTitle}`;
         const isCompleted = progress[resourceKey] === 100;
-        
-        // Update the individual resource progress
+
         updateProgress(resourceKey, isCompleted ? 0 : 100);
 
-        // Calculate the new overall progress after the current resource is updated
         const updatedProgress = resources.reduce((count, resource) => {
             const key = `${subtopicId}-${resource.title}`;
 
@@ -32,11 +30,9 @@ export default function ResourcesList({ resources, subtopicId }: Readonly<Resour
             return count + (progress[key] === 100 ? 1 : 0);
         }, 0);
 
-        // Calculate the percentage and update subtopic progress
         const overallProgress = (updatedProgress / resources.length) * 100;
         updateProgress(subtopicId, overallProgress);
 
-        // If all resources are completed, ensure subtopic is marked as complete
         if (overallProgress === 100) {
             updateProgress(subtopicId, 100);
         }

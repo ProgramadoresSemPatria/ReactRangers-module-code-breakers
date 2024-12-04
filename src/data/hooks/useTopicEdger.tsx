@@ -1,4 +1,5 @@
 import { BaseEdge, EdgeProps, getBezierPath } from '@xyflow/react';
+import useTheme from './useTheme';
 
 export default function TopicEdge({
   sourceX,
@@ -18,7 +19,7 @@ export default function TopicEdge({
     targetY,
     targetPosition,
   });
-
+  const { theme } = useTheme();
   return (
     <BaseEdge
       path={edgePath}
@@ -26,7 +27,7 @@ export default function TopicEdge({
       style={{
         ...style,
         strokeWidth: 3,
-        stroke: '#28d3a0',
+        stroke: theme === 'dark' ? '#28d3a0' : '#4814b0',
       }}
     />
   );

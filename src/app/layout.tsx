@@ -1,6 +1,7 @@
-import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import Header from "@/components/shared/Header";
+import { ThemeProvider } from "@/data/context/ThemeContext";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -13,60 +14,46 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata: Metadata = {
-  title: "TrailMap – Trilha de Desenvolvimento Front-End em 3D",
-  description:
-    "Explore a trilha completa de desenvolvimento front-end em um mapa interativo 3D. Comece pelos fundamentos e avance até técnicas avançadas, frameworks e ferramentas essenciais.",
-  keywords: [
-    "TrailMap",
-    "desenvolvimento front-end",
-    "mapa 3D",
-    "trilha de aprendizado",
-    "React",
-    "Next.js",
-    "Three.js",
-    "JavaScript",
-    "CSS",
-    "HTML",
-  ],
-  viewport: "width=device-width, initial-scale=1.0",
-  robots: "index, follow",
-  openGraph: {
-    title: "TrailMap – Trilha de Desenvolvimento Front-End em 3D",
-    description:
-      "Explore um caminho interativo para desenvolvimento front-end em um mapa 3D inovador.",
-    type: "website",
-    images: [
-      {
-        url: "/images/trailmap-thumbnail.jpg", 
-        width: 1200,
-        height: 630,
-        alt: "TrailMap - Um mapa 3D interativo para desenvolvimento front-end",
-      },
-    ],
-  },
- 
-};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   return (
-    <html lang="pt">
+    <html lang="en">
       <head>
         <meta charSet="UTF-8" />
         <meta
           name="author"
           content="Luan Alves de Paiva & Arthur Duarte"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <title>Roadmap</title>
+        <meta
+          name="description"
+          content="This system serves as a roadmap for front-end development, offering structured guidance on building modern, scalable web applications."
+        />
+        <meta
+          name="keywords"
+          content="front-end development, roadmap, web development, React, Next.js, modern web applications, UI/UX design"
+        />
+        <meta
+          name="robots"
+          content="index, follow"
+        />
+        <link
+          rel="icon"
+          href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>"
+        />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <ThemeProvider>
+          <Header />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

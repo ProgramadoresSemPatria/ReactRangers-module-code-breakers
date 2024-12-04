@@ -80,4 +80,18 @@ Deploy this project effortlessly using [Vercel](https://vercel.com). Check out t
 Access the [APP](https://trail-map.vercel.app/)
 ---
 
+## 🌌 Interfaces
+### Light Mode
+#### Home
+![Home](https://i.ibb.co/hFMJmGn/Captura-de-tela-2024-12-04-092954.png)
+#### Subtopics
+![subtopics](https://i.ibb.co/Dr7pQxr/Captura-de-tela-2024-12-04-093101.png)
+
+### Dark Mode
+#### Home
+![Home](https://i.ibb.co/gb1Mng8/Captura-de-tela-2024-12-04-093127.png)
+#### Subtopics
+![subtopics](https://i.ibb.co/ZHgS46Z/Captura-de-tela-2024-12-04-093201.png)
+
+
 Happy coding! 🎉

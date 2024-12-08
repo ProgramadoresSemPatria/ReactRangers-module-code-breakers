@@ -34,7 +34,7 @@ export default function MainTopicNode({ data }: Readonly<MainTopicNodeProps>) {
         {data.subtopics && data.subtopics.length > 0 && (
           <div className="mt-6">
             <h3 className={`text-2xl font-semibold mb-3 ${theme === 'dark' && 'text-white'}`}>Subtopics</h3>
-            <div className="space-y-4 bg-zinc-200 p-4 rounded-lg">
+            <div className={`space-y-4 p-4 rounded-lg ${theme === 'dark' ? 'bg-gray-800' : 'bg-zinc-200'}`}>
               {data.subtopics.map((subtopic) => (
                 <SubtopicItem key={subtopic.id} subtopic={subtopic} />
               ))}

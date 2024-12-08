@@ -39,7 +39,7 @@ export default function ResourcesList({ resources, subtopicId }: Readonly<Resour
     };
 
     return (
-        <div className="mt-2">
+        <div className="pb-8">
             <h4 className={`text-lg font-semibold mb-3 text-black`}>Resources:</h4>
             <div className="flex flex-col gap-2 mt-1">
                 {resources.map((resource) => {
@@ -55,7 +55,7 @@ export default function ResourcesList({ resources, subtopicId }: Readonly<Resour
                             />
                             <a
                                 href={resource.url}
-                                className="cursor-pointer font-semibold text-indigo-650"
+                                className="cursor-pointer text-base font-semibold underline text-indigo-650 hover:text-indigo-600 transition-colors"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 onClick={() => !isCompleted && handleResourceClick(resource.title)}

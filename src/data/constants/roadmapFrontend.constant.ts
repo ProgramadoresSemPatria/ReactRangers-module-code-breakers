@@ -117,7 +117,7 @@ const roadmapNodes: RoadmapNodes[] = [
 {
   id: "2",
   type: "main",
-  position: { x: 250, y: 150 },
+  position: { x: -250, y: 200 },
   data: {
     title: "HTML",
     description: "HTML (HyperText Markup Language) is used to structure web pages and web applications. It serves as the foundation for web development, allowing for styling with CSS and interactivity with JavaScript.",
@@ -223,7 +223,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "3",
     type: "main",
-    position: { x: -100, y: 250 },
+    position: { x: 0, y: 200 },
     data: {
       title: "CSS",
       description: "CSS (Cascading Style Sheets) is a fundamental technology for styling web pages. It controls the visual presentation of HTML elements, including layout, colors, fonts, spacing, and responsive design.",
@@ -303,7 +303,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "4",
     type: "main",
-    position: { x: 500, y: 600 },
+    position: { x: 250, y: 200 },
     data: {
       title: "JavaScript",
       description: "JavaScript is a versatile programming language that enables interactive and dynamic content on websites. It's essential for modern web development, allowing you to create responsive user interfaces and handle complex client-side operations.",
@@ -383,7 +383,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "5",
     type: "main",
-    position: { x: 500, y: 800 },
+    position: { x: -200, y: 400 },
     data: {
       title: "Version Control Systems",
       description: "Version control systems help track changes to code over time, enabling collaboration between developers and providing a history of code changes. Git is the most widely used version control system in modern software development.",
@@ -425,7 +425,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "6",
     type: "main",
-    position: { x: 500, y: 1000 },
+    position: { x: 200, y: 400 },
     data: {
       title: "VCS Hosting Services",
       description: "Version Control System hosting services provide platforms to store, manage, and collaborate on code repositories. These platforms offer features like issue tracking, pull requests, code review tools, and project management capabilities.",
@@ -497,7 +497,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "7",
     type: "main",
-    position: { x: 500, y: 1200 },
+    position: { x: 0, y: 600 },
     data: {
       title: "Package Managers",
       description: "Package managers are essential tools in modern web development that automate the process of installing, updating, configuring, and managing dependencies in your projects.",
@@ -569,7 +569,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "8",
     type: "main",
-    position: { x: 500, y: 1400 },
+    position: { x: -200, y: 800 },
     data: {
       title: "Pick a Framework",
       description: "Modern web development often involves using a JavaScript framework. Choose one that best fits your project needs and learning goals. Each framework has its own strengths and use cases.",
@@ -694,7 +694,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "9",
     type: "main",
-    position: { x: 500, y: 1600 },
+    position: { x: 200, y: 800 },
     data: {
       title: "Writing CSS",
       description: "Modern web development offers various approaches to writing and managing CSS, from CSS preprocessors to utility-first frameworks. Each approach has its own benefits and use cases for styling web applications.",
@@ -774,7 +774,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "10",
     type: "main",
-    position: { x: 500, y: 1800 },
+    position: { x: 200, y: 1000 },
     data: {
       title: "Linters and Formatters",
       description: "Linters and formatters are essential tools in modern development that help maintain code quality, catch potential errors, and ensure consistent code style across projects and teams.",
@@ -831,7 +831,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "11",
     type: "main",
-    position: { x: 500, y: 2000 },
+    position: { x: -100, y: 1000 },
     data: {
       title: "Module Bundlers",
       description: "Module bundlers are build tools that combine many JavaScript files and their dependencies into a single file that's production-ready. They help optimize loading times and manage complex dependency relationships.",
@@ -937,7 +937,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "12",
     type: "main",
-    position: { x: 500, y: 2200 },
+    position: { x: -400, y: 1000 },
     data: {
       title: "Testing",
       description: "Testing is crucial in modern web development to ensure application reliability and maintainability. Different types of testing tools serve various purposes, from unit testing to end-to-end testing.",
@@ -1040,7 +1040,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "13",
     type: "main",
-    position: { x: 500, y: 2400 },
+    position: { x: 200, y: 1200 },
     data: {
       title: "Web Security Basics",
       description: "Understanding web security fundamentals is crucial for building secure web applications. This includes knowledge of common vulnerabilities, security protocols, and best practices for protecting user data.",
@@ -1131,7 +1131,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "14",
     type: "main",
-    position: { x: 500, y: 2600 },
+    position: { x: -200, y: 1200 },
     data: {
       title: "Web Components",
       description: "Web Components are a set of web platform APIs that allow you to create reusable, encapsulated HTML elements. They're built on web standards and work across modern browsers.",
@@ -1207,7 +1207,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "15",
     type: "main",
-    position: { x: 500, y: 2800 },
+    position: { x: 0, y: 1400 },
     data: {
       title: "Type Checkers",
       description: "Type checkers help catch errors early in development by adding static typing to JavaScript. They improve code quality, maintainability, and developer experience through better tooling and documentation.",
@@ -1249,7 +1249,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "16",
     type: "main",
-    position: { x: 500, y: 3000 },
+    position: { x: -400, y: 1600 },
     data: {
       title: "Server-Side Rendering (SSR)",
       description: "Server-Side Rendering frameworks enable rendering web pages on the server before sending them to the client, improving initial load performance and SEO. These frameworks provide powerful features for building full-stack applications.",
@@ -1329,7 +1329,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "17",
     type: "main",
-    position: { x: 500, y: 3200 },
+    position: { x: 200, y: 1600 },
     data: {
       title: "GraphQL",
       description: "GraphQL is a query language for APIs and a runtime for executing those queries. It provides a more efficient, powerful and flexible alternative to REST, allowing clients to request exactly the data they need.",
@@ -1386,7 +1386,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "18",
     type: "main",
-    position: { x: 500, y: 3400 },
+    position: { x: 200, y: 1800 },
     data: {
       title: "Progressive Web Apps (PWAs)",
       description: "Progressive Web Apps combine the best of web and native apps. They are web applications that can progressively enhance to deliver native app-like experiences to users, including offline functionality, push notifications, and device hardware access.",
@@ -1530,7 +1530,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "19",
     type: "main",
-    position: { x: 500, y: 3600 },
+    position: { x: -200, y: 1800 },
     data: {
       title: "Static Site Generators",
       description: "Static Site Generators (SSGs) create full static HTML websites based on raw data and templates. They provide better performance, security, and SEO compared to dynamic websites, while maintaining a modern development experience.",
@@ -1610,7 +1610,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "20",
     type: "main",
-    position: { x: 500, y: 3800 },
+    position: { x: 0, y: 2000 },
     data: {
       title: "Mobile App Development",
       description: "Modern frameworks enable web developers to create native and hybrid mobile applications using their existing JavaScript/TypeScript knowledge. These frameworks provide native performance while maintaining a single codebase for multiple platforms.",
@@ -1690,7 +1690,7 @@ const roadmapNodes: RoadmapNodes[] = [
   {
     id: "21",
     type: "main",
-    position: { x: 500, y: 4000 },
+    position: { x: 0, y: 2200 },
     data: {
       title: "Desktop App Development",
       description: "Modern frameworks enable web developers to create native desktop applications using web technologies. These frameworks provide native performance and access to system APIs while leveraging web development skills.",

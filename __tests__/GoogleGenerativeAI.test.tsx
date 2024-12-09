@@ -1,6 +1,7 @@
 import { waitFor } from "@testing-library/react";
 import useGenerateDescription from "../src/data/hooks/useGenerateDescription";
 import { renderHook } from "@testing-library/react";
+
 jest.mock('@google/generative-ai', () => {
     return {
         GoogleGenerativeAI: jest.fn().mockImplementation(() => ({
@@ -19,8 +20,8 @@ jest.mock('@google/generative-ai', () => {
         })),
     };
 });
-describe('useGenerateDescription', () => {
 
+describe('useGenerateDescription', () => {
     it('should return a description for a valid title', async () => {
         const { result } = renderHook(() =>
             useGenerateDescription('Valid Title')
@@ -33,4 +34,12 @@ describe('useGenerateDescription', () => {
         expect(result.current.description).toBe('Mocked description text.');
         expect(result.current.error).toBe(null);
     });
-})
+
+    it('should not fetch a description if title is empty', () => {
+        const { result } = renderHook(() => useGenerateDescription(''));
+
+        expect(result.current.loading).toBe(false);
+        expect(result.current.description).toBe(null);
+        expect(result.current.error).toBe(null);
+    });
+});

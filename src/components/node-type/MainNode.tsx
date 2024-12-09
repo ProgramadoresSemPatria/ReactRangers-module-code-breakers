@@ -10,10 +10,13 @@ import NodeStyle from './NodeStyle';
 import SubtopicItem from "./SubtopicItem";
 import { MainTopicNodeProps } from "@/data/interface";
 import useTheme from "@/data/hooks/useTheme";
+import useGenerateDescription from "@/data/hooks/useGenerateDescription";
+import { TextGenerateEffect } from "../ui/text-generate-effect";
 
 
 export default function MainTopicNode({ data }: Readonly<MainTopicNodeProps>) {
   const { theme } = useTheme()
+  const { description, loading } = useGenerateDescription(data.title);
   return (
     <Sheet>
       <SheetTrigger asChild>
@@ -26,7 +29,12 @@ export default function MainTopicNode({ data }: Readonly<MainTopicNodeProps>) {
           <SheetTitle className={`text-3xl font-bold ${theme === 'dark' && 'text-white'}`}>{data.title}</SheetTitle>
           {data.description && (
             <SheetDescription className={`text-base ${theme === 'dark' && 'text-white'}`}>
-              {data.description}
+              {loading ? (
+                <p className="text-sm text-gray-500">Gerando descrição...</p>
+              ) : (
+                <TextGenerateEffect className={`${theme === 'dark' ? 'text-gray-300' : 'text-gray-500'} text-sm mb-4 `} words={description ?? data.description} />
+
+              )}
             </SheetDescription>
           )}
         </SheetHeader>

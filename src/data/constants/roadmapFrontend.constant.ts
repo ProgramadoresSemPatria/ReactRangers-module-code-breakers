@@ -521,7 +521,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Package.json Guide",
-              url: "https://nodejs.dev/learn/the-package-json-guide",
+              url: "https://docs.npmjs.com/cli/v10/configuring-npm/package-json",
             }
           ],
         },
@@ -665,7 +665,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "SolidJS Crash Course",
-              url: "https://www.youtube.com/watch?v=Wu8RuhA6VFs",
+              url: "https://youtube.com/playlist?list=PL4cUxeGkcC9gU_GvFygZFu0aBysPilkbB&si=HYLsfmK2_XKWNk52",
             }
           ],
         },
@@ -714,7 +714,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Tailwind CSS Best Practices",
-              url: "https://www.youtube.com/watch?v=xYt_KdQRk7o",
+              url: "https://www.youtube.com/watch?v=aSlK3GhRuXA",
             },
             {
               title: "Tailwind CSS with React/Next.js",
@@ -754,10 +754,7 @@ const roadmapNodes: RoadmapNodes[] = [
               title: "PostCSS Documentation",
               url: "https://postcss.org/",
             },
-            {
-              title: "Why PostCSS?",
-              url: "https://blog.logrocket.com/why-you-should-use-postcss/",
-            },
+
             {
               title: "PostCSS Crash Course",
               url: "https://www.youtube.com/watch?v=ohJcZW60br0",
@@ -794,7 +791,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "ESLint Configuration Guide",
-              url: "https://blog.logrocket.com/using-eslint-typescript/",
+              url: "https://eslint.org/docs/latest/use/configure/",
             },
             {
               title: "ESLint Setup Tutorial",
@@ -821,7 +818,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "VSCode Prettier Setup",
-              url: "https://www.youtube.com/watch?v=_gPHtEfHz70",
+              url: "https://www.youtube.com/watch?v=__eiQumLOEo",
             }
           ],
         }
@@ -927,7 +924,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Parcel vs Other Bundlers",
-              url: "https://parceljs.org/features/comparison/",
+              url: "https://abrir.link/CNQhu",
             }
           ],
         }
@@ -957,11 +954,11 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Getting Started with Vitest",
-              url: "https://www.youtube.com/watch?v=oLSgbV32oAs",
+              url: "https://www.youtube.com/watch?v=QIqSzlrr-IM",
             },
             {
               title: "Testing Vue with Vitest",
-              url: "https://vueschool.io/articles/vuejs-tutorials/getting-started-with-vitest/",
+              url: "https://vuejs.org/guide/scaling-up/testing",
             }
           ],
         },
@@ -999,7 +996,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Playwright Tutorial",
-              url: "https://www.youtube.com/watch?v=_Jzr1_p8qhc",
+              url: "https://www.youtube.com/playlist?list=PLhW3qG5bs-L9sJKoT1LC5grGT77sfW0Z8",
             },
             {
               title: "Playwright Test Generator",
@@ -1113,7 +1110,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Web Security Essentials",
-              url: "https://www.youtube.com/watch?v=IgJWPZ2OKO4",
+              url: "https://www.youtube.com/watch?v=gsGfRatJZrk",
             },
             {
               title: "OWASP Security Guide",
@@ -1193,7 +1190,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Shadow DOM Explained",
-              url: "https://www.youtube.com/watch?v=ShadowDOMVideoID",
+              url: "https://www.youtube.com/watch?v=K5i9zMzVlzM",
             },
             {
               title: "Shadow DOM Deep Dive",
@@ -1296,7 +1293,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Nuxt.js Best Practices",
-              url: "https://www.youtube.com/watch?v=7IuH3HcR7Zo",
+              url: "https://medium.com/@ali_mirzaei/nuxt-js-structure-best-practices-building-robust-vue-js-applications-625ed4e782bb",
             }
           ],
         },
@@ -1368,15 +1365,11 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Introduction to Relay Modern",
-              url: "https://relay.dev/docs/getting-started/introduction/",
+              url: "https://relay.dev/docs/tutorial/intro/",
             },
             {
               title: "Relay Modern Deep Dive",
               url: "https://www.youtube.com/watch?v=wXLf18DsV-I",
-            },
-            {
-              title: "Building with Relay",
-              url: "https://relay.dev/docs/tutorial/intro/",
             }
           ],
         }
@@ -1440,11 +1433,11 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Using Geolocation",
-              url: "https://web.dev/geolocation/",
+              url: "https://dev.to/choiruladamm/how-to-use-geolocation-api-using-reactjs-ndk",
             },
             {
               title: "Location-Based PWA Tutorial",
-              url: "https://www.youtube.com/watch?v=KiR3qHxS5hY",
+              url: "https://www.youtube.com/watch?v=Tut8dwPZ7uY",
             }
           ],
         },
@@ -1482,7 +1475,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Orientation Sensors Guide",
-              url: "https://developers.google.com/web/fundamentals/native-hardware/device-orientation",
+              url: "https://www.w3.org/TR/orientation-sensor/",
             }
           ],
         },
@@ -1498,10 +1491,6 @@ const roadmapNodes: RoadmapNodes[] = [
             {
               title: "Web Payments Overview",
               url: "https://web.dev/payments/",
-            },
-            {
-              title: "Implementing Web Payments",
-              url: "https://developers.google.com/web/fundamentals/payments",
             }
           ],
         },
@@ -1516,7 +1505,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Web Authentication Guide",
-              url: "https://web.dev/webauthn/",
+              url: "https://dev.to/ma7moud3bas/how-to-secure-the-web-a-comprehensive-guide-to-authentication-strategies-for-developers-48od",
             },
             {
               title: "Sign In Users More Easily",
@@ -1565,7 +1554,7 @@ const roadmapNodes: RoadmapNodes[] = [
           resources: [
             {
               title: "VuePress Documentation",
-              url: "https://vuepress.vuejs.org/guide/",
+              url: "https://vuepress.vuejs.org/",
             },
             {
               title: "VuePress Tutorial",
@@ -1573,11 +1562,11 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Creating a Blog with VuePress",
-              url: "https://blog.logrocket.com/creating-blog-with-vuepress/",
+              url: "https://www.youtube.com/watch?v=UrWeoEMt7z8",
             },
             {
               title: "VuePress Configuration Guide",
-              url: "https://vuepress.vuejs.org/config/",
+              url: "https://vuepress.vuejs.org/guide/configuration.html",
             }
           ],
         },
@@ -1600,7 +1589,7 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "11ty for Static Sites",
-              url: "https://www.youtube.com/watch?v=TAWx9KFgwRA",
+              url: "https://www.youtube.com/playlist?list=PLwhCq3ZFGOGgZDg_pnVh15gUfYqWnlWRs",
             }
           ],
         }
@@ -1728,10 +1717,6 @@ const roadmapNodes: RoadmapNodes[] = [
               url: "https://tauri.app/v1/guides/",
             },
             {
-              title: "Why Tauri?",
-              url: "https://tauri.app/v1/guides/getting-started/why-tauri",
-            },
-            {
               title: "Building with Tauri",
               url: "https://www.youtube.com/watch?v=kRoGYgAuZQE",
             },
@@ -1752,15 +1737,15 @@ const roadmapNodes: RoadmapNodes[] = [
             },
             {
               title: "Getting Started with Flutter Desktop",
-              url: "https://docs.flutter.dev/platform-integration/desktop",
+              url: "https://www.youtube.com/watch?v=V09e5nb95lo",
             },
             {
               title: "Flutter Desktop Development",
-              url: "https://www.youtube.com/watch?v=R4LHxid_0SI",
+              url: "https://flutter.dev/development",
             },
             {
               title: "Building Desktop Apps with Flutter",
-              url: "https://medium.com/flutter/announcing-flutter-for-desktop-create-and-publish-beautiful-native-apps-for-windows-macos-and-linux-915f543a4d4e",
+              url: "https://www.youtube.com/watch?v=SmmHdxAw8wA",
             }
           ],
         }

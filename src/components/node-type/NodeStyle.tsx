@@ -31,7 +31,7 @@ export default function NodeStyle({ title, subtopics }: Readonly<NodeStyleProps>
     <>
       <Handle type="target" position={Position.Top} />
       <motion.div
-        className={`px-3 py-4 rounded-md shadow-md flex flex-col gap-6 text-2xl ${theme === "dark" ? 'bg-green-350 text-slate-950 ' : 'bg-indigo-650 text-white '} font-bold cursor-pointer`}
+        className={`px-3 pb-5 pt-2 rounded-xl shadow-md flex flex-col gap-3 text-2xl ${theme === "dark" ? 'bg-green-350 hover:bg-green-300 transition-colors text-slate-950 ' : 'bg-indigo-650 hover:bg-indigo-600 transition-colors text-white '} font-bold cursor-pointer`}
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}

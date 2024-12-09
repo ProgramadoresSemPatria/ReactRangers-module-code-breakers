@@ -3,14 +3,11 @@ import React, { useState } from 'react';
 import { ReactFlow, Background, Controls, Node } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 import { roadmapNodes, roadmapEdges } from '@/data/constants/roadmapFrontend.constant';
-import { Merriweather } from "next/font/google";
 import MainTopicNode from './node-type/MainNode';
 import MainEdge from '@/data/hooks/useMainEdger';
 import TopicEdge from '@/data/hooks/useTopicEdger';
 import { Resource } from '@/data/interface';
 import useTheme from '@/data/hooks/useTheme';
-
-const merriweather = Merriweather({ subsets: ['latin'], weight: '700' });
 
 const nodeTypes = {
   main: MainTopicNode,
@@ -51,11 +48,11 @@ export default function RoadmapFlow() {
   };
 
   return (
-    <main className={`h-screen ${theme === 'dark' ? 'bg-gray-950 ' : 'bg-stone-50'} p-4  ${merriweather.className}`}>
+    <main className={`h-screen ${theme === 'dark' ? 'bg-gray-950 ' : 'bg-stone-50'} p-4`}>
       <h1 className={`text-2xl font-bold py-4 text-center ${theme === 'dark' && 'text-white'}`}>
         Front-end Development Roadmap
       </h1>
-      <section className={`h-[90%] w-full shadow-md rounded-lg overflow-hidden ${theme === 'dark' ?  'bg-gray-900' : 'bg-slate-200'}`}>
+      <section className={`h-[90%] w-full shadow-md rounded-lg overflow-hidden ${theme === 'dark' ?  'bg-gray-900' : 'bg-white'}`}>
         <ReactFlow
           nodes={nodes}
           edges={edges}

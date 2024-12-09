@@ -5,9 +5,22 @@ Welcome to the **Front-End Development Trailmap**, your comprehensive guide to m
 
 ## 🚀 Overview
 
-- **90+ Learning Resources**: Explore curated content to learn front-end development, covering topics from the fundamentals to advanced concepts.
-- **7 Comprehensive Tests**: Evaluate your understanding and progress through Jest-powered tests integrated into the project.
+- **320+ Learning Resources**: Explore curated content to learn front-end development, covering topics from the fundamentals to advanced concepts.
+- **8 Comprehensive Tests**: Evaluate your understanding and progress through Jest-powered tests integrated into the project.
 - **Next.js Framework**: Built with the powerful Next.js framework to demonstrate best practices in modern web development.
+
+## 🔧 Tools and Technologies
+
+This project was developed using:
+
+- **Next.js**: For server-side rendering and optimized web applications.
+- **Tailwind CSS**: For rapid and efficient styling.
+- **React Flow**: For building interactive and customizable diagrams.
+- **Material UI**: For modern and accessible user interface components.
+- **Git Flow**: For managing development workflows.
+- **Jest**: For robust and reliable testing.
+- **React Testing Library**: For testing React components effectively.
+- **Gemini API**: For seamless integration with external services.
 
 ## 📋 Prerequisites
 
@@ -45,10 +58,14 @@ Modify the `app/page.tsx` file to start customizing the project. The changes wil
 
 ## 🧪 Tests
 
-This project includes **7 Jest-powered tests** to validate your understanding and ensure code quality. Run the tests with:
+This project includes **8 Jest-powered tests** to validate your understanding and ensure code quality.
+
+### Running Tests
+
+Run the tests using the following command:
 
 ```bash
-npm test
+npm run test
 ```
 
 ### Coverage
@@ -61,7 +78,7 @@ These tests cover:
 
 ## 🌟 Features
 
-- **Curated Content**: Over 90 resources, including tutorials, articles, and interactive exercises.
+- **Curated Content**: Over 320 resources, including tutorials, articles, and interactive exercises.
 - **Optimized Performance**: Leverages Next.js capabilities, including server-side rendering and static site generation.
 - **Responsive Design**: Ensures seamless usability across devices.
 
@@ -78,6 +95,7 @@ To deepen your understanding of Next.js, explore:
 Deploy this project effortlessly using [Vercel](https://vercel.com). Check out the [Next.js Deployment Documentation](https://nextjs.org/docs/app/building-your-application/deploying) for detailed instructions.
 
 Access the [APP](https://trail-map.vercel.app/)
+
 ---
 
 ## 🌌 Interfaces
@@ -92,6 +110,5 @@ Access the [APP](https://trail-map.vercel.app/)
 ![Home](https://i.ibb.co/gb1Mng8/Captura-de-tela-2024-12-04-093127.png)
 #### Subtopics
 ![subtopics](https://i.ibb.co/ZHgS46Z/Captura-de-tela-2024-12-04-093201.png)
-
 
 Happy coding! 🎉

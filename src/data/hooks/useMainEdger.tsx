@@ -28,7 +28,6 @@ export default function MainEdge({
         ...style,
         strokeWidth: 4,
         stroke: theme === 'dark' ? '#28d3a0' : '#4814b0',
-        strokeDasharray: '0'
       }}
     />
   );

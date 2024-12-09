@@ -28,7 +28,6 @@ export default function TopicEdge({
         ...style,
         strokeWidth: 3,
         stroke: theme === 'dark' ? '#28d3a0' : '#4814b0',
-        strokeDasharray: '0'
       }}
     />
   );
